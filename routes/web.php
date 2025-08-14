@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
 use App\Livewire\Settings\Appearance;
@@ -12,24 +13,15 @@ Route::group(['prefix' => '{language}'], function () {
 
     Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
-    Route::view('dashboard', 'dashboard')
-        ->middleware(['auth', 'verified'])
-        ->name('dashboard');
-
-    Route::view('home', 'dashboard')
-        ->middleware(['auth', 'verified'])
-        ->name('home');
-
     Route::middleware(['auth'])->group(function () {
 
-        Route::resource('/users', UserController::class)->middleware(['auth' , 'admin']);
+        Route::get('dashboard', [DashboardController::class , 'index'])->name('dashboard');
+        Route::resource('/users', UserController::class)->middleware(['admin']);
 
-
-        Route::redirect('settings', 'settings/profile');
-
-        Route::get('settings/profile', Profile::class)->name('settings.profile');
-        Route::get('settings/password', Password::class)->name('settings.password');
-        Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
+//        Route::redirect('settings', 'settings/profile');
+//        Route::get('settings/profile', Profile::class)->name('settings.profile');
+//        Route::get('settings/password', Password::class)->name('settings.password');
+//        Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
     });
 
 });
