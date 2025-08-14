@@ -42,7 +42,7 @@ jobs:
           REMOTE_PORT: ${{ secrets.SSH_PORT }}
           REMOTE_USER: ${{ secrets.SSH_USER }}
           REMOTE_PASSWORD: ${{ secrets.SSH_PASSWORD }}
-          TARGET: "/home/u719028192/domains/ahmed-alameer.com/gtc-tickets-app"
+          TARGET: "/home/username/domains/ahmed-alameer.com/gtc-tickets-app"
 
       - name: Run command via SSH
         uses: appleboy/ssh-action@v0.1.6
@@ -52,7 +52,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
-            cd /home/u719028192/domains/ahmed-alameer.com/gtc-tickets-app
+            cd /home/username/domains/ahmed-alameer.com/gtc-tickets-app
             php artisan migrate --force
             php artisan optimize
 
