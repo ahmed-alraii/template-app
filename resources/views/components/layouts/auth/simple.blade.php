@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{__('Alzy Al-Aseel')}}</title>
+    <title>{{__('Template App')}}</title>
 
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
@@ -17,12 +17,12 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="{{asset('assets/css/demo/style.css')}}">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" />
+    <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}"/>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 
 
-    {{--   @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <link rel="stylesheet" href="{{asset('assets/css/myStyle.css')}}">
 </head>
